@@ -1,0 +1,23 @@
+{
+    "name": "zaachi/php-instagram-effects",
+    "description": "PHP class for photo effects like Instagram",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jiri Zachar",
+            "email": "zaachi@gmail.com"
+        },
+        {
+            "name": "Dan Fuhry",
+            "email": "dan@fuhry.com"
+        }
+    ],
+    "require": {
+		"ext-gd": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Zaachi\\": "src/"
+		}
+	}
+}
