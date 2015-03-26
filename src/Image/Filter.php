@@ -28,6 +28,17 @@ class Filter
 		
 		$this->assetDirectory = dirname(dirname(dirname(__FILE__))) . '/assets/';
 	}
+	
+	/**
+	 * Get the current image resource
+	 * 
+	 * @return resource
+	 */
+	
+	public function getImage()
+	{
+		return $this->image;
+	}
 
 	public function bubbles()
 	{
