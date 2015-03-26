@@ -1,11 +1,24 @@
 PHP-Instagram-effects
 =====================
 
-php class for photo effects as a Instagram
+PHP class for photo effects similar to Instagram
 
+## Usage
 
-HOW IT WORKS
---------------
+```php
+use Zaachi\Image\Filter;
+require 'vendor/autoload.php';
 
-You can look at an example where you can see how each filter uses. 
-Class for filters in the "filters" directory.
+$image = imagecreatefromjpeg("/path/to/image.jpg");
+
+$filter = (new Filter($image))->aqua();
+
+header('Content-type: image/jpeg');
+imagejpeg($filter->getImage());
+```
+
+Examples of usage are in the `examples` directory. To generate example images, this bash snippet may be helpful:
+
+```shell
+for f in *.php; do php $f > ${f%.php}.png; done
+```
