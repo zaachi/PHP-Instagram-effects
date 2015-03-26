@@ -1,6 +1,6 @@
 <?php
 
-namespace Fuhry\Image;
+namespace Zaachi\Image;
 
 class Filter
 {

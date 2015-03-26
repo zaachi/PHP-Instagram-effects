@@ -1,5 +1,5 @@
 {
-    "name": "fuhry/php-instagram-effects",
+    "name": "zaachi/php-instagram-effects",
     "description": "PHP class for photo effects like Instagram",
     "license": "MIT",
     "authors": [
@@ -17,7 +17,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Fuhry\\": "src/"
+			"Zaachi\\": "src/"
 		}
 	}
 }

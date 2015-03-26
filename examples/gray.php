@@ -1,5 +1,5 @@
 <?php
-use Fuhry\Image\Filter;
+use Zaachi\Image\Filter;
 require '../vendor/autoload.php';
 
 $image = imagecreatefromjpeg(isset($argv[1]) ? $argv[1] : "example.jpg");
