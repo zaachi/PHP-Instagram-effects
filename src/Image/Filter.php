@@ -249,5 +249,37 @@ class Filter {
 		imagefilter($this->image, IMG_FILTER_CONTRAST, -20);
 
 		return $this;
-	}	
+	}
+
+	public function blur() {
+		imagefilter($this->image, IMG_FILTER_SELECTIVE_BLUR);
+		imagefilter($this->image, IMG_FILTER_GAUSSIAN_BLUR);
+		imagefilter($this->image, IMG_FILTER_CONTRAST, -15);
+		imagefilter($this->image, IMG_FILTER_SMOOTH, -2);
+
+		return $this;
+	}
+
+	public function vintage() {
+		imagefilter($this->image, IMG_FILTER_BRIGHTNESS, 10);
+		imagefilter($this->image, IMG_FILTER_GRAYSCALE);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 40, 10, -15);
+
+		return $this;
+	}
+	
+	public function concentrate() {
+		imagefilter($this->image, IMG_FILTER_GAUSSIAN_BLUR);
+		imagefilter($this->image, IMG_FILTER_SMOOTH, -10);
+
+		return $this;
+	}
+	
+	public function hermajesty() {
+		imagefilter($this->image, IMG_FILTER_BRIGHTNESS, -10);
+		imagefilter($this->image, IMG_FILTER_CONTRAST, -5);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 80, 0, 60);
+
+		return $this;
+	}
 }
