@@ -220,6 +220,13 @@ class Filter {
 		return $this;
 	}
 
+	public function boost2() {
+		imagefilter( $this->image, IMG_FILTER_CONTRAST, -35);
+		imagefilter( $this->image, IMG_FILTER_COLORIZE, 25, 25, 25);
+
+		return $this;
+	}
+
 	public function gray() {
 		
 		imagefilter($this->image, IMG_FILTER_CONTRAST, -60);
