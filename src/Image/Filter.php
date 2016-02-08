@@ -2,8 +2,7 @@
 
 namespace Zaachi\Image;
 
-class Filter
-{
+class Filter {
 	/**
 	 * @var resource
 	 */
@@ -22,8 +21,8 @@ class Filter
 	 * @param resource &$image GD image resource
 	 */
 	
-	public function __construct(&$image)
-	{
+	public function __construct(&$image) {
+		
 		$this->image = $image;
 		
 		$this->assetDirectory = dirname(dirname(dirname(__FILE__))) . '/assets/';
@@ -35,13 +34,13 @@ class Filter
 	 * @return resource
 	 */
 	
-	public function getImage()
-	{
+	public function getImage() {
+		
 		return $this->image;
 	}
 
-	public function bubbles()
-	{
+	public function bubbles() {
+		
 		$dest = imagecreatefromjpeg($this->assetDirectory . "pattern4.jpg");
 
 		$x = imagesx($this->image);
@@ -60,8 +59,8 @@ class Filter
 		return $this;
 	}
 
-	public function colorise()
-	{
+	public function colorise() {
+		
 		$dest = imagecreatefromjpeg($this->assetDirectory . "pattern5.jpg");
 
 		$x = imagesx($this->image);
@@ -79,16 +78,16 @@ class Filter
 		return $this;
 	}
 
-	public function sepia()
-	{
+	public function sepia() {
+		
 		imagefilter($this->image, IMG_FILTER_GRAYSCALE);
 		imagefilter($this->image, IMG_FILTER_COLORIZE, 100, 50, 0);
 		
 		return $this;
 	}
 
-	public function sharpen()
-	{
+	public function sharpen() {
+		
 		$gaussian = array(
 				array(1.0, 1.0, 1.0),
 				array(1.0, -7.0, 1.0),
@@ -99,8 +98,8 @@ class Filter
 		return $this;
 	}
 
-	public function emboss()
-	{
+	public function emboss() {
+		
 		$gaussian = array(
 				array(-2.0, -1.0, 0.0),
 				array(-1.0, 1.0, 1.0),
@@ -112,16 +111,16 @@ class Filter
 		return $this;
 	}
 
-	public function cool()
-	{
+	public function cool() {
+		
 		imagefilter($this->image, IMG_FILTER_MEAN_REMOVAL);
 		imagefilter($this->image, IMG_FILTER_CONTRAST, -50);
 		
 		return $this;
 	}
 
-	public function old2()
-	{
+	public function old2() {
+		
 		$dest = imagecreatefromjpeg($this->assetDirectory . "pattern1.jpg");
 
 		$x = imagesx($this->image);
@@ -138,8 +137,8 @@ class Filter
 		return $this;
 	}
 
-	public function old3()
-	{
+	public function old3() {
+		
 		imagefilter($this->image, IMG_FILTER_CONTRAST, -30);
 
 		$dest = imagecreatefromjpeg($this->assetDirectory . "pattern3.jpg");
@@ -158,8 +157,8 @@ class Filter
 		return $this;
 	}
 
-	public function old()
-	{
+	public function old() {
+		
 		$dest = imagecreatefromjpeg($this->assetDirectory . "bg1.jpg");
 
 		$x = imagesx($this->image);
@@ -176,23 +175,23 @@ class Filter
 		return $this;
 	}
 
-	public function light()
-	{
+	public function light() {
+		
 		imagefilter($this->image, IMG_FILTER_BRIGHTNESS, 10);
 		imagefilter($this->image, IMG_FILTER_COLORIZE, 100, 50, 0, 10);
 		
 		return $this;
 	}
 
-	public function aqua()
-	{
+	public function aqua() {
+		
 		imagefilter($this->image, IMG_FILTER_COLORIZE, 0, 70, 0, 30);
 		
 		return $this;
 	}
 
-	public function fuzzy()
-	{
+	public function fuzzy() {
+		
 		$gaussian = array(
 				array(1.0, 1.0, 1.0),
 				array(1.0, 1.0, 1.0),
@@ -204,16 +203,16 @@ class Filter
 		return $this;
 	}
 
-	public function boost()
-	{
+	public function boost() {
+		
 		imagefilter($this->image, IMG_FILTER_CONTRAST, -35);
 		imagefilter($this->image, IMG_FILTER_BRIGHTNESS, 10);
 		
 		return $this;
 	}
 
-	public function gray()
-	{
+	public function gray() {
+		
 		imagefilter($this->image, IMG_FILTER_CONTRAST, -60);
 		imagefilter($this->image, IMG_FILTER_GRAYSCALE);
 		
