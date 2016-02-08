@@ -234,4 +234,12 @@ class Filter {
 		
 		return $this;
 	}
+
+	public function antique() {
+		imagefilter($this->image, IMG_FILTER_BRIGHTNESS, 0);
+		imagefilter($this->image, IMG_FILTER_CONTRAST, -30);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 75, 50, 25);
+
+		return $this;
+	}
 }
