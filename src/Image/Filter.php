@@ -119,6 +119,24 @@ class Filter {
 		return $this;
 	}
 
+	public function old() {
+		
+		$dest = imagecreatefromjpeg($this->assetDirectory . "bg1.jpg");
+
+		$x = imagesx($this->image);
+		$y = imagesy($this->image);
+
+		$x2 = imagesx($dest);
+		$y2 = imagesy($dest);
+
+		$thumb = imagecreatetruecolor($x, $y);
+		imagecopyresized($thumb, $dest, 0, 0, 0, 0, $x, $y, $x2, $y2);
+
+		imagecopymerge($this->image, $thumb, 0, 0, 0, 0, $x, $y, 30);
+		
+		return $this;
+	}
+
 	public function old2() {
 		
 		$dest = imagecreatefromjpeg($this->assetDirectory . "pattern1.jpg");
@@ -153,24 +171,6 @@ class Filter {
 		imagecopyresized($thumb, $dest, 0, 0, 0, 0, $x, $y, $x2, $y2);
 
 		imagecopymerge($this->image, $thumb, 0, 0, 0, 0, $x, $y, 50);
-		
-		return $this;
-	}
-
-	public function old() {
-		
-		$dest = imagecreatefromjpeg($this->assetDirectory . "bg1.jpg");
-
-		$x = imagesx($this->image);
-		$y = imagesy($this->image);
-
-		$x2 = imagesx($dest);
-		$y2 = imagesy($dest);
-
-		$thumb = imagecreatetruecolor($x, $y);
-		imagecopyresized($thumb, $dest, 0, 0, 0, 0, $x, $y, $x2, $y2);
-
-		imagecopymerge($this->image, $thumb, 0, 0, 0, 0, $x, $y, 30);
 		
 		return $this;
 	}
