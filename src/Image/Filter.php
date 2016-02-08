@@ -282,4 +282,38 @@ class Filter {
 
 		return $this;
 	}
+
+	public function everglow() {
+		imagefilter($this->image, IMG_FILTER_BRIGHTNESS, -30);
+		imagefilter($this->image, IMG_FILTER_CONTRAST, -5);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 30, 30, 0);
+
+		return $this;
+	}
+
+	public function freshblue() {
+		imagefilter($this->image, IMG_FILTER_CONTRAST, -5);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 20, 0, 80, 60);
+
+		return $this;
+	}
+
+	public function tender() {
+		imagefilter($this->image, IMG_FILTER_CONTRAST, 5);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 80, 20, 40, 50);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 0, 40, 40, 100);
+		imagefilter($this->image, IMG_FILTER_SELECTIVE_BLUR);
+
+		return $this;
+	}
+
+	public function dream() {
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 150, 0, 0, 50);
+		imagefilter($this->image, IMG_FILTER_NEGATE);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 0, 50, 0, 50);
+		imagefilter($this->image, IMG_FILTER_NEGATE);
+		imagefilter($this->image, IMG_FILTER_GAUSSIAN_BLUR);
+
+		return $this;
+	}
 }
