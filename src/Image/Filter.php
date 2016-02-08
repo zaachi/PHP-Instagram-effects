@@ -242,4 +242,12 @@ class Filter {
 
 		return $this;
 	}
+
+	public function blackwhite() {
+		imagefilter($this->image, IMG_FILTER_GRAYSCALE);
+		imagefilter($this->image, IMG_FILTER_BRIGHTNESS, 10);
+		imagefilter($this->image, IMG_FILTER_CONTRAST, -20);
+
+		return $this;
+	}	
 }
