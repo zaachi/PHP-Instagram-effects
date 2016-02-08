@@ -86,6 +86,15 @@ class Filter {
 		return $this;
 	}
 
+	public function sepia2() {
+		imagefilter($this->image, IMG_FILTER_GRAYSCALE);
+		imagefilter($this->image, IMG_FILTER_BRIGHTNESS, -10);
+		imagefilter($this->image, IMG_FILTER_CONTRAST, -20);
+		imagefilter($this->image, IMG_FILTER_COLORIZE, 60, 30, -15);
+
+		return $this;
+	}
+
 	public function sharpen() {
 		
 		$gaussian = array(
